@@ -1,6 +1,6 @@
 # auto-enterprise
 
-Automating Tests on Linux are dead-easy, everything can be configured from the command line. MacOS takes a different approach.
+Automating Wi-Fi Enterprise tests on Linux is dead-easy, everything can be configured from the command line. MacOS takes a different approach.
 
 ## Features
 
@@ -10,8 +10,7 @@ Automating Tests on Linux are dead-easy, everything can be configured from the c
 ## Requirements
 
 - MacOS
-- Python (87.5% of the codebase is in Python)
-- Shell (12.5% of the codebase is in Shell)&#8203;``oaicite:{"number":1,"metadata":{"title":"GitHub - nullsurface/auto-enterprise: A small framework for automating MacOS Enterprise Wi-Fi connections.","url":"https://github.com/nullsurface/auto-enterprise","text":"Languages\n\n  *  Python 87.5%  \n  *  Shell 12.5%  \n\n## Footer\n\n   © 2023 GitHub, Inc","pub_date":null}}``&#8203;
+- Python
 
 ## Getting Started
 
@@ -35,7 +34,26 @@ Automating Tests on Linux are dead-easy, everything can be configured from the c
     ```
     python connect.py
     ```
-    * Import the module
+    * Import the module in python
     ```
     import MacAutoEnt
     ```
+## Documentation
+
+As this is a small framework, most of the usage information can be found in the script's code comments. Please read through the comments in `MacAutoEnterprise.py` for detailed information on usage and customization.
+
+## Contributions
+
+Contributions to `auto-enterprise` are welcome! Feel free to fork the repository and submit pull requests.
+
+## License
+
+This project is licensed under the Apache-2.0 license.
+
+## Support
+
+For any issues or feature requests, please open an issue on the GitHub repository.
+
+## Community
+
+If you find this project useful, please consider giving it a star on GitHub.
