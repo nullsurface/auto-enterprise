@@ -1,3 +1,4 @@
+import json
 import time
 import pyautogui
 from typing import TypeVar, List, Tuple
@@ -28,9 +29,30 @@ class MouseRoutine():
             self._routine.append(MoveClickWait(pos[0], pos[1], 2))
             print(f"Mouse clicked at ({x}, {y}) with button {button}")
 
+    def load(self, path: str):
+        with open(f"routines/{path}", "r") as file:
+            routine = json.load(file)
+        for mcw in routine:
+            self._routine.append(MoveClickWait(mcw["x_pos"],
+                                          mcw["y_pos"],
+                                          mcw["wait_time"]))
+
+    def save(self, path: str):
+        routine = {}
+
+        for k,v in enumerate(self._routine):
+            routine.update({f"{k}": {"x_pos": f"{v._x}",
+                                    "y_pos": f"{v._y}",
+                                    "wait_time": f"{v._wait}"}})
+
+        with open(f"routines/{path}", "w") as file:
+            json.dump(routine, file)
+        
+
 def main():
     mouse = MouseRoutine()
     mouse.record()
+    mouse.save("TEST")
     mouse.play()
 
 
