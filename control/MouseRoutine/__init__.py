@@ -3,7 +3,7 @@ import time
 import pyautogui
 from typing import TypeVar, List, Tuple
 from pynput import mouse
-from MoveClickWait import MoveClickWait
+from control.MouseRoutine.MoveClickWait import MoveClickWait
 
 class MouseRoutine():
     _routine: List[MoveClickWait]
@@ -33,9 +33,10 @@ class MouseRoutine():
         with open(f"routines/{path}", "r") as file:
             routine = json.load(file)
         for mcw in routine:
-            self._routine.append(MoveClickWait(mcw["x_pos"],
-                                          mcw["y_pos"],
-                                          mcw["wait_time"]))
+            print(routine[mcw])
+            self._routine.append(MoveClickWait(int(routine[mcw]["x_pos"]),
+                                               int(routine[mcw]["y_pos"]),
+                                               int(routine[mcw]["wait_time"])))
 
     def save(self, path: str):
         routine = {}
@@ -47,15 +48,3 @@ class MouseRoutine():
 
         with open(f"routines/{path}", "w") as file:
             json.dump(routine, file)
-        
-
-def main():
-    mouse = MouseRoutine()
-    mouse.record()
-    mouse.save("TEST")
-    mouse.play()
-
-
-
-if __name__ == "__main__":
-    main()
