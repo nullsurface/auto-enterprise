@@ -4,7 +4,7 @@ import pyautogui
 
 APPLY_PROFILE_AUTOMATER = "auto-connect/ApplyProfile.app"
 
-class MathAutoEnterprise:
+class MacAutoEnt:
     def __init__(self, ssid: str,
                  radius_username: str,
                  radius_password: str,
@@ -22,6 +22,10 @@ class MathAutoEnterprise:
 
         # Run apply profile macOS Automater Script
         os.system(f"open ./{APPLY_PROFILE_AUTOMATER}")
+
+        # scroll then click on profile
+        pyautogui.move(300, 0)
+        pyautogui.scroll(-5)
 
         # Sleep to allow apply profile to run
         time.sleep(10)
