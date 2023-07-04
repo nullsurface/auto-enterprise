@@ -24,8 +24,8 @@ class MacAutoEnt:
         os.system(f"open ./{APPLY_PROFILE_AUTOMATER}")
 
         # scroll then click on profile
-        pyautogui.move(300, 0)
-        pyautogui.scroll(-5)
+        pyautogui.move(500, 0)
+        # pyautogui.scroll(-5)
 
         # Sleep to allow apply profile to run
         time.sleep(10)
